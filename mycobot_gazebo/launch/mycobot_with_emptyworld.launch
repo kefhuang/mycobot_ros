@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- File path -->
+  <arg name="urdf_path" default="$(find mycobot_description)/urdf/mycobot.urdf.xacro" />
+  <arg name="world_path" default="$(find mycobot_gazebo)/worlds/empty.world" />
+
+  <!-- Initial positions -->
+  <arg name="x0" default="0" />
+  <arg name="y0" default="0" />
+  <arg name="z0" default="0" />
+
+  <!-- Launch Gazebo simulated world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(arg world_path)" />
+  </include>
+
+  <!-- Load urdf into parameter server -->
+  <param name="robot_description" command="$(find xacro)/xacro '$(arg urdf_path)' gazebo_plugin:=true"/>
+
+  <!-- Spawn the robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+    args="-urdf -model myCobot -param robot_description -x $(arg x0) -y $(arg y0) -z $(arg z0)" />
+
+  <include file="$(find mycobot_control)/launch/mycobot_control.launch" />
+
+</launch>

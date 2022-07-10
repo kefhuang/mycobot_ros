@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- File path -->
+  <arg name="urdf_path" default="$(find mycobot_description)/urdf/mycobot.urdf.xacro" />
+  <arg name="world_path" default="$(find mycobot_gazebo)/worlds/table.world" />
+
+  <!-- Initial positions -->
+  <arg name="x0" default="0" />
+  <arg name="y0" default="0" />
+  <arg name="z0" default="1.015" />
+
+  <!-- Load the Gazebo simulator with specified world file -->
+  <include file="$(find mycobot_gazebo)/launch/mycobot_with_emptyworld.launch">
+    <arg name="urdf_path" value="$(arg urdf_path)" />
+    <arg name="world_path" value="$(arg world_path)" />
+    <arg name="x0" value="$(arg x0)" />
+    <arg name="y0" value="$(arg y0)" />
+    <arg name="z0" value="$(arg z0)" />
+  </include>
+
+</launch>
