@@ -1,0 +1,28 @@
+<launch>
+
+  <!-- Choose whether to show the joint status using GUI. -->
+  <arg name="joint_status_gui" default="false" />
+
+  <!-- Launch Gazebo simulator and spawn the robot -->
+  <include file="$(find mycobot_gazebo)/launch/mycobot_with_emptyworld.launch" />
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find mycobot_control)/config/mycobot_controllers.yaml" command="load"/>
+
+  <!-- Start the publisher based on whether gui is required -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" unless="$(arg joint_status_gui)">
+    <rosparam param="source_list">[/joint_states]</rosparam>
+  </node>
+  <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" if="$(arg joint_status_gui)">
+    <rosparam param="source_list">[/joint_states]</rosparam>
+  </node>
+
+  <!-- Start trajectory planning and execution -->
+  <include file="$(find mycobot_moveit)/launch/move_group.launch" />
+
+  <!-- Run Rviz and load the default config to see the state of the move_group node -->
+  <include file="$(find mycobot_moveit)/launch/moveit_rviz.launch">
+    <arg name="rviz_config" value="$(find mycobot_moveit)/config/moveit.rviz"/>
+  </include>
+
+</launch>

@@ -1,0 +1,31 @@
+<package format="2">
+  <name>mycobot_moveit</name>
+  <version>0.0.0</version>
+  <description>
+    MyCobot Moveit 
+  </description>
+  <author email="timkhuang@icloud.com">Kefeng Huang</author>
+  <maintainer email="timkhuang@icloud.com">Kefeng Huang</maintainer>
+
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <exec_depend>moveit_ros_move_group</exec_depend>
+  <exec_depend>moveit_ros_control_interface</exec_depend>
+  <exec_depend>moveit_fake_controller_manager</exec_depend>
+  <exec_depend>moveit_kinematics</exec_depend>
+  <exec_depend>moveit_planners_ompl</exec_depend>
+  <exec_depend>moveit_ros_visualization</exec_depend>
+  <exec_depend>moveit_setup_assistant</exec_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>joint_state_publisher_gui</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>ros_control</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>mycobot_description</exec_depend>
+  <exec_depend>mycobot_control</exec_depend>
+  <exec_depend>mycobot_gazebo</exec_depend>
+
+</package>

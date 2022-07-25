@@ -245,10 +245,10 @@
         <motorTorqueConstant>0.418</motorTorqueConstant>
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="${mycobot_joint_1}">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="${mycobot_joint_1}_motor">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
           <mechanicalReduction>1</mechanicalReduction>
         </actuator>
       </transmission>
@@ -258,10 +258,10 @@
         <motorTorqueConstant>0.418</motorTorqueConstant>
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="${mycobot_joint_2}">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="${mycobot_joint_2}_motor">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
           <mechanicalReduction>1</mechanicalReduction>
         </actuator>
       </transmission>
@@ -271,10 +271,10 @@
         <motorTorqueConstant>0.418</motorTorqueConstant>
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="${mycobot_joint_3}">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="${mycobot_joint_3}_motor">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
           <mechanicalReduction>1</mechanicalReduction>
         </actuator>
       </transmission>
@@ -284,10 +284,10 @@
         <motorTorqueConstant>0.418</motorTorqueConstant>
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="${mycobot_joint_4}">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="${mycobot_joint_4}_motor">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
           <mechanicalReduction>1</mechanicalReduction>
         </actuator>
       </transmission>
@@ -297,10 +297,10 @@
         <motorTorqueConstant>0.418</motorTorqueConstant>
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="${mycobot_joint_5}">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="${mycobot_joint_5}_motor">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
           <mechanicalReduction>1</mechanicalReduction>
         </actuator>
       </transmission>
@@ -310,10 +310,10 @@
         <motorTorqueConstant>0.418</motorTorqueConstant>
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="${mycobot_joint_6}">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="${mycobot_joint_6}_motor">
-          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
           <mechanicalReduction>1</mechanicalReduction>
         </actuator>
       </transmission>

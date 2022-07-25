@@ -18,6 +18,9 @@
   <!-- Load urdf into parameter server -->
   <param name="robot_description" command="$(find xacro)/xacro '$(arg urdf_path)' gazebo_plugin:=true"/>
 
+  <!-- Publish robot's link & joint status -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
   <!-- Spawn the robot -->
   <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
     args="-urdf -model myCobot -param robot_description -x $(arg x0) -y $(arg y0) -z $(arg z0)" />
