@@ -24,6 +24,7 @@ catkin_install_python(PROGRAMS
   scripts/slider_control.py
   scripts/listen_real.py
   scripts/simple_gui.py
+  scripts/pick_and_place.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

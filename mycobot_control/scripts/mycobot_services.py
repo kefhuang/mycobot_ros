@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 import time
 import rospy
-from mycobot_communication.srv import *
+from mycobot_control.srv import *
 
 from pymycobot.mycobot import MyCobot
 
@@ -26,6 +26,7 @@ def create_services():
     rospy.Service("get_joint_coords", GetCoords, get_coords)
     rospy.Service("switch_gripper_status", GripperStatus, switch_status)
     rospy.Service("switch_pump_status", PumpStatus, toggle_pump)
+    rospy.Service("switch_servo_status", ServoStatus, switch_servo)
     rospy.loginfo("ready")
     rospy.spin()
 
@@ -101,6 +102,18 @@ def toggle_pump(req):
             mc.set_basic_output(req.Pin2, 1)
 
     return PumpStatusResponse(True)
+
+
+def switch_servo(req):
+    """Release or focus servos"""
+    if mc:
+        if req.Status:
+            for i in range(6):
+                mc.focus_servo(i+1)
+        else:
+            mc.release_all_servos()
+    
+    return ServoStatusResponse(True)
 
 
 robot_msg = """

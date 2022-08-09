@@ -14,7 +14,7 @@ import math
 import rospy
 from rospy import ServiceException
 from sensor_msgs.msg import JointState
-from mycobot_communication.srv import SetAngles
+from mycobot_control.srv import SetAngles
 
 from pymycobot.mycobot import MyCobot
 

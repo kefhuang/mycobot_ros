@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import Tkinter as tk
-from mycobot_communication.srv import GetCoords, SetCoords, GetAngles, SetAngles, GripperStatus
+from mycobot_control.srv import GetCoords, SetCoords, GetAngles, SetAngles, GripperStatus
 import rospy
 import time
 from rospy import ServiceException
@@ -24,7 +24,7 @@ class Window:
         # Get the data of the robotic arm，获取机械臂数据
         self.record_coords = [0, 0, 0, 0, 0, 0, self.speed, self.model]
         self.res_angles = [0, 0, 0, 0, 0, 0, self.speed, self.model]
-        self.get_date()
+        self.get_data()
 
         # get screen width and height.获取屏幕宽度和高度
         self.ws = self.win.winfo_screenwidth()  # width of the screen
@@ -409,7 +409,7 @@ class Window:
         self.show_j_date(j_value[:-1])
         # return j_value,c_value,speed
 
-    def get_date(self):
+    def get_data(self):
         # Take the data of the robotic arm for display.拿机械臂的数据，用于展示
         t = time.time()
         while time.time() - t < 2:
