@@ -13,13 +13,14 @@ def generate(total_number, temp_path):
     while count <= total_number:
         path = os.path.join(temp_path, f"calib{count:03}.jpg")
         ret, img = camera.read()
-        cv2.imshow(f"img_{count:03}", img)
+        window_name = f"img_{count:03}"
+        cv2.imshow(window_name, img)
 
         if cv2.waitKey(0) & 0xFF == ord('s'):
             cv2.imwrite(path, img)
             count += 1
 
-        cv2.destroyWindow(f"img_{count:03}")
+        cv2.destroyWindow(window_name)
 
 
 def calibrate(dirpath, square_size, width, height, visualize=False):
