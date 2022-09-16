@@ -1,0 +1,27 @@
+<launch>
+    <!-- How many images to record for calibrate-->
+	<arg name="total_number" default="20" /> 
+    <!-- Saving locations of these images temporarily -->
+	<arg name="temp_path" default="$(find opencv_aruco)/images/calibration" />
+
+    <!-- The actual size of a single square on the checkerboard in meters -->
+    <arg name="square_size" default="0.025" />
+    <!-- How many squares does the checkerboard has. -->
+    <arg name="height" default="9" />
+    <arg name="width" default="6" />
+
+    <!-- whether to visualize the calibration -->
+    <arg name="visualize" default="true" />
+    <!-- output path of the calibration file -->
+    <arg name="output_path" default="$(find opencv_aruco)/config" />
+
+	<node name="calibrate_camera" pkg="opencv_aruco" type="calibrate_camera.py" >
+        <param name="total_number" type="int" value="$(arg total_number)" />
+        <param name="temp_path" type="str" value="$(arg temp_path)" />
+        <param name="square_size" type="double" value="$(arg square_size)" />
+        <param name="height" type="int" value="$(arg height)" />
+        <param name="width" type="int" value="$(arg width)" />
+        <param name="visualize" type="bool" value="$(arg visualize)" />
+        <param name="output_path" type="str" value="$(arg output_path)" />
+    </node>
+</launch>

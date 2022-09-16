@@ -1,0 +1,19 @@
+<launch>
+	<arg name="gripper_id" default="6" />
+	<arg name="object_id" default="1" />
+
+    <arg name="marker_length" default="0.03" />
+    <arg name="aruco_dict_type" default="DICT_4X4_50" />
+    <arg name="matrix_coefficients" default="$(find opencv_aruco)/config/calibration_matrix.npy" />
+    <arg name="distortion_coefficients" default="$(find opencv_aruco)/config/distortion_coefficients.npy" />
+
+	<node name="pose_estimation" pkg="opencv_aruco" type="pose_estimation.py" output="screen">
+	    <param name="gripper_id" type="int" value="$(arg gripper_id)" />
+        <param name="object_id" type="int" value="$(arg object_id)" />
+
+        <param name="marker_length" type="double" value="$(arg marker_length)" />
+        <param name="aruco_dict_type" type="str" value="$(arg aruco_dict_type)" />
+        <param name="matrix_coefficients" type="str" value="$(arg matrix_coefficients)" />
+        <param name="distortion_coefficients" type="str" value="$(arg distortion_coefficients)" />
+    </node>
+</launch>
