@@ -18,6 +18,9 @@
 		<arg name="port" value="$(arg port)" />	
 		<arg name="baud" value="$(arg baud)" />	
     </include>
+
+<!--	<include file="$(find opencv_aruco)/launch/pose_estimate.launch" /> -->
+
 	<node name="real_listener" pkg="mycobot_280pi" type="listen_real.py" />
-	<node name="pick_and_place" pkg="mycobot_280pi" type="pick_and_place.py" />
+	<node name="arcuo_pick" pkg="mycobot_280pi" type="aruco_pick.py" />
 </launch>
